@@ -1,32 +1,32 @@
-print('Welcome to AskPython Quiz')
-answer=input('Are you ready to play the Quiz ? (yes/no) :')
-score=0
-total_questions=3
- 
-if answer.lower()=='yes':
-    answer=input('Question 1: What is your Favourite programming language?')
-    if answer.lower()=='python':
-        score += 1
-        print('correct')
+from random import randint
+
+t = ["Rock", "Paper", "Scissors"]
+
+computer = t[randint(0,2)]rock
+player = False
+
+while player == False:
+#set player to True
+    player = input("Rock, Paper, Scissors?")
+    if player == computer:
+        print("Tie!")
+    elif player == "Rock":
+        if computer == "Paper":
+            print("You lose!", computer, "covers", player)
+        else:
+            print("You win!", player, "smashes", computer)
+    elif player == "Paper":
+        if computer == "Scissors":
+            print("You lose!", computer, "cut", player)
+        else:
+            print("You win!", player, "covers", computer)
+    elif player == "Scissors":
+        if computer == "Rock":
+            print("You lose...", computer, "smashes", player)
+        else:
+            print("You win!", player, "cut", computer)
     else:
-        print('Wrong Answer :(')
- 
- 
-    answer=input('Question 2: Do you follow any author on AskPython? ')
-    if answer.lower()=='yes':
-        score += 1
-        print('correct')
-    else:
-        print('Wrong Answer :(')
- 
-    answer=input('Question 3: What is the name of your favourite website for learning Python?')
-    if answer.lower()=='askpython':
-        score += 1
-        print('correct')
-    else:
-        print('Wrong Answer :(')
- 
-print('Thankyou for Playing this small quiz game, you attempted',score,"questions correctly!")
-mark=(score/total_questions)*100
-print('Marks obtained:',mark)
-print('BYE!')
+        print("That's not a valid play. Check your spelling!")
+
+    player = False
+    computer = t[randint(0,2)]
